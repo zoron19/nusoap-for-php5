@@ -22,7 +22,7 @@
 * @version  $Id: class.soapclient.php,v 1.52 2005/07/27 19:24:42 snichol Exp $
 * @access   public
 */
-class soapclient extends nusoap_base  {
+class soapclientnusoap extends nusoap_base  {
 
 	var $username = '';
 	var $password = '';
@@ -89,7 +89,7 @@ class soapclient extends nusoap_base  {
 	* @param	integer $response_timeout set the response timeout
 	* @access   public
 	*/
-	function soapclient($endpoint,$wsdl = false,$proxyhost = false,$proxyport = false,$proxyusername = false, $proxypassword = false, $timeout = 0, $response_timeout = 30){
+	function soapclientnusoap($endpoint,$wsdl = false,$proxyhost = false,$proxyport = false,$proxyusername = false, $proxypassword = false, $timeout = 0, $response_timeout = 30){
 		parent::nusoap_base();
 		$this->endpoint = $endpoint;
 		$this->proxyhost = $proxyhost;
@@ -669,7 +669,7 @@ class soapclient extends nusoap_base  {
 				unset($paramCommentStr);
 			}
 		}
-		$evalStr = 'class soap_proxy_'.$r.' extends soapclient {
+		$evalStr = 'class soap_proxy_'.$r.' extends soapclientnusoap {
 	'.$evalStr.'
 }';
 		return $evalStr;
