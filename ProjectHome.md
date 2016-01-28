@@ -1,0 +1,3 @@
+NuSOAP for PHP 5 modifies the [NuSOAP](http://sourceforge.net/projects/nusoap/) library so that it doesn't have a class name conflict with the [PHP5 soap extension](http://us.php.net/soap).
+
+NuSOAP's class name is 'soapclient'. PHP5 includes a SOAP extension whose class name is also 'soapclient'. As a result, you effectively can't use NuSOAP with PHP5. NuSOAP for PHP5 simply changes the class name to 'soapclientnusoap'.
